@@ -50,8 +50,8 @@ export async function getOrCreateChat(
       res.status(400).json({ message: "Participant ID is required" });
       return;
     }
-
-    if (!Types.ObjectId.isValid(participantId as string)) {
+    // @ts-ignore
+    if (!Types.ObjectId.isValid(participantId)) {
       return res.status(400).json({ message: "Invalid participant ID" });
     }
 
